@@ -15,11 +15,10 @@ public class ErrorListener extends BaseErrorListener {
 
     @Override
     public void syntaxError(Recognizer<?, ?> recognizer, Object offendingSymbol, int line, int charPositionInLine, String msg, RecognitionException e) {
-        System.err.println("line " + line + ":" + charPositionInLine + " " + msg);
+        System.err.println("Error de sintaxis en linea " + line + ":" + charPositionInLine);
         if (e != null) {
-            System.out.println("Ctx: " + e.getCtx());
-            System.out.println("Expected token: " + e.getExpectedTokens().toString(vocabulary));
-            System.out.println("Offending token: " + e.getOffendingToken().getText());
+            System.err.println("Token(s) esperado(s): " + e.getExpectedTokens().toString(vocabulary));
+            System.err.println("Token encontrado: " + vocabulary.getSymbolicName(e.getOffendingToken().getType()) + " : '" + e.getOffendingToken().getText() + "'");
         }
     }
 }

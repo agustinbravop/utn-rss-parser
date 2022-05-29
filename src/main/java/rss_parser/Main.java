@@ -33,12 +33,13 @@ public class Main {
 
         if (parser.getNumberOfSyntaxErrors() > 0) {
             System.out.println("Errores de sintaxis detectados: " + parser.getNumberOfSyntaxErrors());
-            System.out.println("======= El documento no es RSS valido. =======");
+            System.out.println("======== El documento NO es RSS valido. ========");
             return;
         }
-        System.out.println("\nTokens leidos en el documento:");
+        System.out.println("======== El documento es RSS valido. ========");
+        System.out.println("\n======== Tokens leidos en el documento ========");
         Printer.printTokens(tokens.getTokens(), lexer.getVocabulary());
-        System.out.println("\nParse tree generado:");
+        System.out.println("\n======== Parse tree generado ========");
         Printer.printSyntaxTree(parser, tree);
 
         HTMLWriter writer = new HTMLWriter(tree, parser.getVocabulary());

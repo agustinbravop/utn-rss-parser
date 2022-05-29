@@ -56,13 +56,10 @@ public class HTMLWriter extends RSSParserBaseVisitor<String> {
             visitImg((RSSParser.ImgContext) node);
         } else if (node instanceof RSSParser.TitleContext) {
             visitTitle((RSSParser.TitleContext) node);
-        } else if (node instanceof RSSParser.In_itemContext) {
-            visitRangeOfChildren(node);
-        } else if (node instanceof RSSParser.ChannelContext) {
-            visitRangeOfChildren(node);
-        } else if (node instanceof RSSParser.TxtContext) {
-            visitRangeOfChildren(node);
-        } else if (node instanceof RSSParser.RssContext) {
+        } else if (node instanceof RSSParser.ChannelContext
+                || node instanceof RSSParser.TxtContext
+                || node instanceof RSSParser.RssContext
+                || node instanceof RSSParser.In_itemContext) {
             visitRangeOfChildren(node);
         } else {
             appendWithOffset("");

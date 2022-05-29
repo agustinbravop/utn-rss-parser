@@ -150,11 +150,5 @@
       <artifactId>antlr4-runtime</artifactId>
       <version>4.10.1</version>
     </dependency>
-
-    <dependency>
-      <groupId>com.jolira</groupId>
-      <artifactId>onejar-maven-plugin</artifactId>
-      <version>1.4.4</version>
-    </dependency>
   </dependencies>
 </project>
