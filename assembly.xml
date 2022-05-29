@@ -19,7 +19,7 @@
 
     <!-- Add the JRE from the systems JDK location, to the zip -->
     <fileSet>
-      <directory>${sys.java.home}\jre</directory>
+      <directory>${project.build.directory}\lib\jre</directory>
       <outputDirectory>lib\jre</outputDirectory>
     </fileSet>
   </fileSets>
