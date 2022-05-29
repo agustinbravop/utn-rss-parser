@@ -15,19 +15,20 @@ WS          :   [ \t\r\n]+      -> skip ; // 'skip' hace que el lexer ignore  el
     Toda URL o INT es también un TXT válido.
     ANTLR resuelve esa ambiguedad priorizando el token definido primero.
 */
-URL         :   PROTOCOL LOGIN? DOM (PORT)? ('/' ROUTE?)? QUERY? FRAG? ;
+URL         :   PROTOCOL LOGIN? DOM PORT? ROUTE? QUERY? FRAG? ;
 INT         :   [0-9]+ ;
 TXT         :   ~[<]+ ;
 
-// fragmentos que componen el token URL. No son tokens en sí mismos, solo partes del token URL
+// fragmentos que componen el token URL. No son tokens en sí mismos, solo son partes del token URL.
+// Para el parser, solo existe el token URL.
 fragment    PROTOCOL    :   URL_STR '://' ;
 fragment    LOGIN       :   URL_STR (':' URL_STR)? '@' ;
 fragment    DOM         :   URL_STR ('.' URL_STR)* ;
 fragment    PORT        :   ':' INT ;
-fragment    ROUTE       :   URL_STR ('/' URL_STR)* '/'? ;
+fragment    ROUTE       :   '/'  (URL_STR '/'?)* ;
 fragment    QUERY       :   '?' QUERY_PARAM ('&' QUERY_PARAM)* ;
-fragment    FRAG        :   '#' URL_STR ;
 fragment    QUERY_PARAM :   URL_STR ('=' URL_STR)? ;
+fragment    FRAG        :   '#' URL_STR ;
 fragment    URL_STR     :   INT | [a-zA-Z~0-9] [a-zA-Z0-9.+-]* ; // string dentro de una url
 
 /*
@@ -68,10 +69,11 @@ RSS_VERSION :   '"2.0"'        // soportamos la especificación de RSS 2.0
 
 OPEN_XML    :   '<?xml'     -> pushMode(XML) ;
 /*
-    Dentro de la etiqueta <?xml...?>, su string de atributos ' version="1.0" encoding="UTF-8"?>' es también un token
-    TXT válido. Esto se debe a que ante una ambigüedad de tokens, ANTLRv4 prioriza al token que más caracteres matchea.
-    En este caso, ' version="1.0" encoding="UTF-8"?>' es más largo que 'version'. Nosotros queremos una división más
-    granular de la etiqueta de apertura. Por lo tanto, usamos 'pushMode(XML)' para evitar este comportamiento default.
+    Dentro de la etiqueta <?xml...?>, su string de atributos ' version="1.0" encoding="UTF-8"?>' es también un token TXT válido.
+    Esto se debe a que ante una ambigüedad de tokens, ANTLRv4 prioriza al token que más caracteres matchea.
+    En este caso, ' version="1.0" encoding="UTF-8"?>' es más largo que 'version'.
+    Nosotros queremos una división más granular de la etiqueta de apertura.
+    Por lo tanto, usamos 'pushMode(XML)' para evitar este comportamiento default.
 
     En modo XML, el lexer solo lee tokens que estén definidos dentro del modo XML, hasta que haya un 'popMode'.
     Se puede pensar al modo XML como un sub-lexer de lo que esta dentro de la etiqueta <?xml...?>.
