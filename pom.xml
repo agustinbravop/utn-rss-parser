@@ -95,8 +95,7 @@
               </classPath>
               <jre>
                 <!-- Relative path to the JRE in the final zip bundle, to launch the exe/jar-->
-                <path>.\lib\jre</path>
-
+                <path>./lib/jre</path>
               </jre>
             </configuration>
           </execution>
