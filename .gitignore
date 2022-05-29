@@ -1,3 +1,7 @@
 *.iml
 .idea
 target/classes
+target/generated-sources
+target/lib
+target/maven-archiver
+target/maven-status
