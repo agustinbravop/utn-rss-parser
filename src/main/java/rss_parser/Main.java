@@ -14,14 +14,13 @@ public class Main {
     public static void main(String[] args) {
         CharStream input;
         if (args.length == 0) {
-            System.out.println("Uso: <archivo.rss>");
+            System.out.println("Uso: rss-parser.exe <archivo.rss> [--html]");
             return;
         }
         try {
             input = CharStreams.fromFileName(args[0]);
         } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println(Arrays.toString(args));
+            System.out.println("Error al intentar leer el archivo " + args[0] + ".");
             return;
         }
         RSSLexer lexer = new RSSLexer(input);
@@ -42,8 +41,10 @@ public class Main {
         System.out.println("\n======== Parse tree generado ========");
         Printer.printSyntaxTree(parser, tree);
 
-        HTMLWriter writer = new HTMLWriter(tree, parser.getVocabulary());
-        String targetPath = args[0].replace(".rss", ".html");
-        writer.writeToFile(targetPath);
+        if (Arrays.asList(args).contains("--html")) {
+            HTMLWriter writer = new HTMLWriter(tree, parser.getVocabulary());
+            String targetPath = args[0].replace(".rss", ".html");
+            writer.writeToFile(targetPath);
+        }
     }
 }

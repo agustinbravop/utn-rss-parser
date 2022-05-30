@@ -21,6 +21,7 @@ TXT         :   ~[<]+ ;
 
 // fragmentos que componen el token URL. No son tokens en sí mismos, solo son partes del token URL.
 // Para el parser, solo existe el token URL.
+fragment    URL_STR     :   INT | [a-zA-Z~0-9] [a-zA-Z0-9.+-]* ; // string dentro de una url
 fragment    PROTOCOL    :   URL_STR '://' ;
 fragment    LOGIN       :   URL_STR (':' URL_STR)? '@' ;
 fragment    DOM         :   URL_STR ('.' URL_STR)* ;
@@ -29,7 +30,6 @@ fragment    ROUTE       :   '/'  (URL_STR '/'?)* ;
 fragment    QUERY       :   '?' QUERY_PARAM ('&' QUERY_PARAM)* ;
 fragment    QUERY_PARAM :   URL_STR ('=' URL_STR)? ;
 fragment    FRAG        :   '#' URL_STR ;
-fragment    URL_STR     :   INT | [a-zA-Z~0-9] [a-zA-Z0-9.+-]* ; // string dentro de una url
 
 /*
     Se junta el '<' con el nombre de la etiqueta porque no pueden estar separados por espacios blancos. Ej: '<link', '</title', pero no '< link', '< / title'.

@@ -18,7 +18,7 @@ public class ErrorListener extends BaseErrorListener {
         System.err.println("Error de sintaxis en linea " + line + ":" + charPositionInLine);
         if (e != null) {
             System.err.println("Token(s) esperado(s): " + e.getExpectedTokens().toString(vocabulary));
-            System.err.println("Token encontrado: " + vocabulary.getSymbolicName(e.getOffendingToken().getType()) + " : '" + e.getOffendingToken().getText() + "'");
+            System.err.println("Token encontrado " + vocabulary.getSymbolicName(e.getOffendingToken().getType()) + ": '" + e.getOffendingToken().getText() + "'");
         }
     }
 }

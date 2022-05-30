@@ -27,8 +27,6 @@ public class HTMLWriter extends RSSParserBaseVisitor<String> {
         visitDocument((RSSParser.DocumentContext) tree);
         try {
             FileWriter writer = new FileWriter(targetPath, false);
-            System.out.println("String a escribir en " + targetPath + ": " + buf);
-
             writer.write(buf.toString());
             writer.close();
         } catch (IOException e) {
