@@ -26,9 +26,9 @@ public class Printer {
     }
 
     private static void recursive(ParseTree aRoot, StringBuilder buf, int offset, List<String> ruleNames) {
-        buf.append("|   ".repeat(Math.max(0, offset - 1)));
+        buf.append("|  ".repeat(Math.max(0, offset - 1)));
         if (offset > 0) {
-            buf.append("|-> ");
+            buf.append("|- ");
         }
         buf.append(Trees.getNodeText(aRoot, ruleNames)).append("\n");
 

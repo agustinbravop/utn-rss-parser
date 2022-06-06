@@ -1,4 +1,4 @@
-package rss_parser;
+ package rss_parser;
 
 import org.antlr.v4.runtime.BaseErrorListener;
 import org.antlr.v4.runtime.RecognitionException;
