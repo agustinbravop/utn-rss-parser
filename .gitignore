@@ -6,3 +6,4 @@ target/lib
 target/maven-archiver
 target/maven-status
 __pycache__
+venv
