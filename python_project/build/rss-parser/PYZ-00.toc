@@ -1,5 +1,5 @@
 ('C:\\Users\\anbra\\Desktop\\UTN\\2doNivel\\Sintaxis y Semántica de los '
- 'Lenguajes\\RSSParser\\RSSParser\\py\\build\\rss-parser\\PYZ-00.pyz',
+ 'Lenguajes\\RSSParser\\RSSParser\\python_project\\build\\rss-parser\\PYZ-00.pyz',
  [('os',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.1264.0_x64__qbz5n2kfra8p0\\lib\\os.py',
@@ -376,6 +376,10 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.1264.0_x64__qbz5n2kfra8p0\\lib\\ast.py',
    'PYMODULE'),
+  ('_py_abc',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.1264.0_x64__qbz5n2kfra8p0\\lib\\_py_abc.py',
+   'PYMODULE'),
   ('stringprep',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.1264.0_x64__qbz5n2kfra8p0\\lib\\stringprep.py',
@@ -384,13 +388,9 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.1264.0_x64__qbz5n2kfra8p0\\lib\\tracemalloc.py',
    'PYMODULE'),
-  ('_py_abc',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.1264.0_x64__qbz5n2kfra8p0\\lib\\_py_abc.py',
-   'PYMODULE'),
   ('printers',
    'C:\\Users\\anbra\\Desktop\\UTN\\2doNivel\\Sintaxis y Semántica de los '
-   'Lenguajes\\RSSParser\\RSSParser\\py\\printers.py',
+   'Lenguajes\\RSSParser\\RSSParser\\python_project\\printers.py',
    'PYMODULE'),
   ('antlr4.tree.Trees',
    'C:\\Users\\anbra\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python310\\site-packages\\antlr4\\tree\\Trees.py',
@@ -415,16 +415,16 @@
    'PYMODULE'),
   ('grammar.RSSParser',
    'C:\\Users\\anbra\\Desktop\\UTN\\2doNivel\\Sintaxis y Semántica de los '
-   'Lenguajes\\RSSParser\\RSSParser\\py\\grammar\\RSSParser.py',
+   'Lenguajes\\RSSParser\\RSSParser\\python_project\\grammar\\RSSParser.py',
    'PYMODULE'),
   ('grammar', '-', 'PYMODULE'),
   ('grammar.RSSLexer',
    'C:\\Users\\anbra\\Desktop\\UTN\\2doNivel\\Sintaxis y Semántica de los '
-   'Lenguajes\\RSSParser\\RSSParser\\py\\grammar\\RSSLexer.py',
+   'Lenguajes\\RSSParser\\RSSParser\\python_project\\grammar\\RSSLexer.py',
    'PYMODULE'),
   ('RSSErrorListener',
    'C:\\Users\\anbra\\Desktop\\UTN\\2doNivel\\Sintaxis y Semántica de los '
-   'Lenguajes\\RSSParser\\RSSParser\\py\\RSSErrorListener.py',
+   'Lenguajes\\RSSParser\\RSSParser\\python_project\\RSSErrorListener.py',
    'PYMODULE'),
   ('antlr4.error.ErrorListener',
    'C:\\Users\\anbra\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python310\\site-packages\\antlr4\\error\\ErrorListener.py',
@@ -434,11 +434,11 @@
    'PYMODULE'),
   ('HTMLWriter',
    'C:\\Users\\anbra\\Desktop\\UTN\\2doNivel\\Sintaxis y Semántica de los '
-   'Lenguajes\\RSSParser\\RSSParser\\py\\HTMLWriter.py',
+   'Lenguajes\\RSSParser\\RSSParser\\python_project\\HTMLWriter.py',
    'PYMODULE'),
   ('grammar.RSSParserVisitor',
    'C:\\Users\\anbra\\Desktop\\UTN\\2doNivel\\Sintaxis y Semántica de los '
-   'Lenguajes\\RSSParser\\RSSParser\\py\\grammar\\RSSParserVisitor.py',
+   'Lenguajes\\RSSParser\\RSSParser\\python_project\\grammar\\RSSParserVisitor.py',
    'PYMODULE'),
   ('antlr4',
    'C:\\Users\\anbra\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python310\\site-packages\\antlr4\\__init__.py',
