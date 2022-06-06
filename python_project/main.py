@@ -45,9 +45,8 @@ def modo_interactivo():
             sys.exit(1)
         except EOFError:
             break
-
         lines.append(line)
-        print(lines)
+
     return InputStream(''.join(lines))
 
 
@@ -60,7 +59,7 @@ def main(argv):
         try:
             input_stream = FileStream(argv[1])
         except IOError:
-            print("Error al intentar leer el archivo " + argv[0] + ".")
+            print("Error al intentar leer el archivo " + argv[1] + ".")
             sys.exit(1)
 
     tree, lexer = parse_input(input_stream)
