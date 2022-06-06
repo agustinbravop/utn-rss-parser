@@ -125,12 +125,12 @@ class HTMLWriter(RSSParserVisitor):
 
     def visitHeight(self, ctx: RSSParser.HeightContext):
         if ctx is None:
-            return "31"  # el default es 31 según la especificación
+            return "31"  # el default es 31 segÃºn la especificaciÃ³n
         else:
             return ctx.INT().getText()
 
     def visitWidth(self, ctx: RSSParser.WidthContext):
         if ctx is None:
-            return "88"  # el default es 88 según la especificación
+            return "88"  # el default es 88 segÃºn la especificaciÃ³n
         else:
             return ctx.INT().getText()

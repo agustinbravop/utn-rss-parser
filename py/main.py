@@ -1,4 +1,5 @@
 import sys
+
 from antlr4 import *
 
 from HTMLWriter import HTMLWriter

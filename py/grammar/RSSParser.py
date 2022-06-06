@@ -1,8 +1,9 @@
-# Generated from C:/Users/anbra/Desktop/UTN/2doNivel/Sintaxis y Semántica de los Lenguajes/RSSParser/RSSParser/py/grammar\RSSParser.g4 by ANTLR 4.10.1
+# Generated from C:/Users/anbra/Desktop/UTN/2doNivel/Sintaxis y Semï¿½ntica de los Lenguajes/RSSParser/RSSParser/py/grammar\RSSParser.g4 by ANTLR 4.10.1
 # encoding: utf-8
-from antlr4 import *
-from io import StringIO
 import sys
+
+from antlr4 import *
+
 if sys.version_info[1] > 5:
 	from typing import TextIO
 else:

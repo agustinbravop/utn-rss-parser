@@ -1,6 +1,7 @@
+import sys
+
 from antlr4 import RecognitionException, Token
 from antlr4.error.ErrorListener import ErrorListener
-import sys
 
 
 class RSSErrorListener(ErrorListener):

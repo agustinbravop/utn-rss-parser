@@ -11,7 +11,7 @@ def print_tokens(tokens: List[Token], symbolic_names: List[str]):
         i = i + 1
 
     # Se trata distinto a EOF porque es un token de ANTLR, no nuestro.
-    # Es el último token, por ende tokens[-1]
+    # Es el Ãºltimo token, por ende tokens[-1]
     print(f'{i}. EOF: \'{tokens[-1].text}\'')
 
 
