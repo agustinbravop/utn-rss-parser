@@ -11,6 +11,6 @@ En `/py_project` se encuentra la versión actual del proyecto, con el código fu
 
 En `/py_project/grammar` se encuentran los dos archivos de gramática y los archivos generados por ANTLR mediante esas gramáticas.
 
-En `/py_project/samples` se encuentran la suite de tests que utilizamos.
+En `/py_project/tests` se encuentran la suite de tests que utilizamos.
 
 En `/py_project/build` se encuentran todos los archivos generados por pyinstaller y en `/py_project/dist` el ejecutable.
