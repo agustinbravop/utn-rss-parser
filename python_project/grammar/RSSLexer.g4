@@ -1,12 +1,13 @@
 lexer grammar RSSLexer;
 
 /*
-    T* significa que vienen cero o más de un T.
-    T+ significa que vienen uno o más de un T.
-    T? significa que T es opcional (puede o no venir).
-    [0-9] significa que puede venir un 0, un 1, un 2, ..., o un 9.
-    [abc] significa que puede venir o un a o un b o un c.
+    T* significa que vienen cero o más de un T (Estrella de Kleene).
+    T+ significa que vienen uno o más de un T: TT*
+    T? significa que T es opcional: (T U lambda)
+    [0-9] significa que puede venir entre un 0 y un 9: (0 U 1 U 2 U ... U 9)
+    [abc] significa que puede venir o un a o un b o un c: (a U b U c)
     Ej: [a-zA-Z]+ significa que puede venir cualquier palabra.
+    Es una forma exelente de resumir: (a U ... U z U A U ... U Z)(a U ... U z U A U ... U Z)*
 */
 COMMENT     :   '<!--' .*? '-->'    -> channel(HIDDEN); // 'channel(HIDDEN)' hace que el parser ignore el token
 WS          :   [ \t\r\n]+      -> skip ; // 'skip' hace que el lexer ignore  el token, lo descarta

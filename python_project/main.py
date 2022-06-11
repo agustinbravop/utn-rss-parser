@@ -18,14 +18,18 @@ def parse_input(input_stream):
     parser.removeErrorListeners()
     parser.addErrorListener(RSSErrorListener(lexer.symbolicNames, lexer.literalNames))
 
-    tree = parser.document()
+    try:
+        tree = parser.document()
+    except Exception as e:
+        print(e)
+        sys.exit(1)
 
     if parser.getNumberOfSyntaxErrors() > 0:
         print("Total de errores de sintaxis detectados: " + str(parser.getNumberOfSyntaxErrors()))
         print("======== El documento NO cumple con el formato RSS. ========")
-        sys.exit(0)
+        if "--debug" not in sys.argv:
+            sys.exit(0)
 
-    print("======== El documento es RSS valido. ========")
     print("\nTokens leidos en el documento: ")
     print_tokens(tokens.tokens, lexer.symbolicNames)
 

@@ -1,9 +1,8 @@
-# Generated from C:/Users/anbra/Desktop/UTN/2doNivel/Sintaxis y Semï¿½ntica de los Lenguajes/RSSParser/RSSParser/py/grammar\RSSParser.g4 by ANTLR 4.10.1
+# Generated from C:/Users/anbra/Desktop/UTN/2doNivel/Sintaxis y Semántica de los Lenguajes/RSSParser/RSSParser/python_project/grammar\RSSParser.g4 by ANTLR 4.10.1
 # encoding: utf-8
-import sys
-
 from antlr4 import *
-
+from io import StringIO
+import sys
 if sys.version_info[1] > 5:
 	from typing import TextIO
 else:
@@ -1751,7 +1750,7 @@ class RSSParser ( Parser ):
             self.state = 310
             self.match(RSSParser.C_HEIGHT)
             if int((None if localctx._INT is None else localctx._INT.text)) > 400:
-                            raise Exception("height " + (None if localctx._INT is None else localctx._INT.text) + " no debe ser mayor a 400.")
+                            raise Exception(f"[Error en linea {(0 if localctx._INT is None else localctx._INT.line)}:{(0 if localctx._INT is None else localctx._INT.column)}] Altura {(None if localctx._INT is None else localctx._INT.text)} no debe ser mayor a 400.")
                         
         except RecognitionException as re:
             localctx.exception = re
@@ -1812,7 +1811,7 @@ class RSSParser ( Parser ):
             self.state = 315
             self.match(RSSParser.C_WIDTH)
             if int((None if localctx._INT is None else localctx._INT.text)) > 144:
-                            raise Exception("width " + (None if localctx._INT is None else localctx._INT.text) + " no debe ser mayor a 144.")
+                            raise Exception(f"[Error en linea {(0 if localctx._INT is None else localctx._INT.line)}:{(0 if localctx._INT is None else localctx._INT.column)}] Ancho {(None if localctx._INT is None else localctx._INT.text)} no debe ser mayor a 144.")
                         
         except RecognitionException as re:
             localctx.exception = re

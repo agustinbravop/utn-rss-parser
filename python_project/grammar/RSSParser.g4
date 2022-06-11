@@ -54,13 +54,13 @@ url         :   O_URL       URL C_URL ;
 
 height      :   O_HEIGHT    INT C_HEIGHT
             {if int($INT.text) > 400:
-                raise Exception("height " + $INT.text + " no debe ser mayor a 400.")
+                raise Exception(f"[Error en linea {$INT.line}:{$INT.pos}] Altura {$INT.text} no debe ser mayor a 400.")
             }
             ;
 
 width       :   O_WIDTH     INT C_WIDTH
             {if int($INT.text) > 144:
-                raise Exception("width " + $INT.text + " no debe ser mayor a 144.")
+                raise Exception(f"[Error en linea {$INT.line}:{$INT.pos}] Ancho {$INT.text} no debe ser mayor a 144.")
             }
             ;
 

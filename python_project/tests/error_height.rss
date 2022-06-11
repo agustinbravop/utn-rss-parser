@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Liftoff News</title>
+    <link>http://liftoff.msfc.nasa.gov/</link>
+    <description>Liftoff to Space Exploration.</description>
+    <category>Nasa</category>
+    <copyright>2023</copyright>
+    <image>
+      <url>http://www.w3cschool.cc/images/logo.gif</url>
+      
+      <title>http://www.w3cschool.cc</title>
+      <link>http://www.w3cschool.cc</link>
+      <height>401</height> <!-- Height no mayor a 400 -->
+      <width>144</width>
+    </image>
+  </channel>
+</rss>
