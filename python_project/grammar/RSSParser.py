@@ -249,14 +249,6 @@ class RSSParser ( Parser ):
         def getRuleIndex(self):
             return RSSParser.RULE_document
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDocument" ):
-                listener.enterDocument(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDocument" ):
-                listener.exitDocument(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitDocument" ):
                 return visitor.visitDocument(self)
@@ -310,14 +302,6 @@ class RSSParser ( Parser ):
 
         def getRuleIndex(self):
             return RSSParser.RULE_xml
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterXml" ):
-                listener.enterXml(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitXml" ):
-                listener.exitXml(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitXml" ):
@@ -374,14 +358,6 @@ class RSSParser ( Parser ):
         def getRuleIndex(self):
             return RSSParser.RULE_xml_version
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterXml_version" ):
-                listener.enterXml_version(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitXml_version" ):
-                listener.exitXml_version(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitXml_version" ):
                 return visitor.visitXml_version(self)
@@ -425,14 +401,6 @@ class RSSParser ( Parser ):
 
         def getRuleIndex(self):
             return RSSParser.RULE_xml_encoding
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterXml_encoding" ):
-                listener.enterXml_encoding(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitXml_encoding" ):
-                listener.exitXml_encoding(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitXml_encoding" ):
@@ -481,14 +449,6 @@ class RSSParser ( Parser ):
 
         def getRuleIndex(self):
             return RSSParser.RULE_rss
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterRss" ):
-                listener.enterRss(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitRss" ):
-                listener.exitRss(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitRss" ):
@@ -566,14 +526,6 @@ class RSSParser ( Parser ):
 
         def getRuleIndex(self):
             return RSSParser.RULE_channel
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterChannel" ):
-                listener.enterChannel(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitChannel" ):
-                listener.exitChannel(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitChannel" ):
@@ -743,14 +695,6 @@ class RSSParser ( Parser ):
         def getRuleIndex(self):
             return RSSParser.RULE_img
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterImg" ):
-                listener.enterImg(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitImg" ):
-                listener.exitImg(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitImg" ):
                 return visitor.visitImg(self)
@@ -822,14 +766,6 @@ class RSSParser ( Parser ):
         def getRuleIndex(self):
             return RSSParser.RULE_item
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterItem" ):
-                listener.enterItem(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitItem" ):
-                listener.exitItem(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitItem" ):
                 return visitor.visitItem(self)
@@ -885,14 +821,6 @@ class RSSParser ( Parser ):
 
         def getRuleIndex(self):
             return RSSParser.RULE_in_item
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterIn_item" ):
-                listener.enterIn_item(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitIn_item" ):
-                listener.exitIn_item(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitIn_item" ):
@@ -1374,14 +1302,6 @@ class RSSParser ( Parser ):
         def getRuleIndex(self):
             return RSSParser.RULE_title
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTitle" ):
-                listener.enterTitle(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTitle" ):
-                listener.exitTitle(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitTitle" ):
                 return visitor.visitTitle(self)
@@ -1432,14 +1352,6 @@ class RSSParser ( Parser ):
         def getRuleIndex(self):
             return RSSParser.RULE_desc
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDesc" ):
-                listener.enterDesc(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDesc" ):
-                listener.exitDesc(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitDesc" ):
                 return visitor.visitDesc(self)
@@ -1488,14 +1400,6 @@ class RSSParser ( Parser ):
 
         def getRuleIndex(self):
             return RSSParser.RULE_link
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterLink" ):
-                listener.enterLink(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitLink" ):
-                listener.exitLink(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitLink" ):
@@ -1547,14 +1451,6 @@ class RSSParser ( Parser ):
         def getRuleIndex(self):
             return RSSParser.RULE_categ
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCateg" ):
-                listener.enterCateg(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCateg" ):
-                listener.exitCateg(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitCateg" ):
                 return visitor.visitCateg(self)
@@ -1605,14 +1501,6 @@ class RSSParser ( Parser ):
         def getRuleIndex(self):
             return RSSParser.RULE_copyr
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCopyr" ):
-                listener.enterCopyr(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCopyr" ):
-                listener.exitCopyr(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitCopyr" ):
                 return visitor.visitCopyr(self)
@@ -1661,14 +1549,6 @@ class RSSParser ( Parser ):
 
         def getRuleIndex(self):
             return RSSParser.RULE_url
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterUrl" ):
-                listener.enterUrl(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitUrl" ):
-                listener.exitUrl(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitUrl" ):
@@ -1719,14 +1599,6 @@ class RSSParser ( Parser ):
 
         def getRuleIndex(self):
             return RSSParser.RULE_height
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterHeight" ):
-                listener.enterHeight(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitHeight" ):
-                listener.exitHeight(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitHeight" ):
@@ -1781,14 +1653,6 @@ class RSSParser ( Parser ):
         def getRuleIndex(self):
             return RSSParser.RULE_width
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterWidth" ):
-                listener.enterWidth(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitWidth" ):
-                listener.exitWidth(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitWidth" ):
                 return visitor.visitWidth(self)
@@ -1840,14 +1704,6 @@ class RSSParser ( Parser ):
 
         def getRuleIndex(self):
             return RSSParser.RULE_txt
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTxt" ):
-                listener.enterTxt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTxt" ):
-                listener.exitTxt(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitTxt" ):

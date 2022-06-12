@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+<title>RSS de la cátedra de Sintaxis y Semántica de Lenguajes </title>
+<link>https://frre.cvg.utn.edu.ar/course/view.php?id=399</link>
+<description>Sintaxis y Semántica de Lenguajes de la U.T.N. F.R.Resistencia. </description>
+<item>
+<title>Planificación 2022</title>
+<link>https://frre.cvg.utn.edu.ar/pluginfile.php/132848/mod_resource/content/1/Planificaci%C3%B3n%20REDUCIDA%202022%20-%20Sintaxis%20y%20Sem%C3%A1ntica%20de%20los%20Lenguajes.pdf</link>
+<description>Planificacion de catedra, con cronograma de clases y evaluaciones</description>
+</item>
+<item>
+<title>Guia de Trabajos prácticos</title>
+<link>https://frre.cvg.utn.edu.ar/mod/resource/view.php?id=43544</link>
+<description>Guía de ejercicios propuestos a resolver en clase práctica</description>
+</item>
+<item>
+<title>Enunciado TPI</title>
+<link>https://frre.cvg.utn.edu.ar/pluginfile.php/82337/mod_resource/content/7/InterpreteRSS.pdf</link>
+<description>Enunciado del Trabajo Final Integrador</description>
+</item>
+</channel>
+</rss>
