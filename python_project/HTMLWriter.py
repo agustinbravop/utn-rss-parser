@@ -18,7 +18,7 @@ class HTMLWriter(RSSParserVisitor):
     def write_to_file(self, tree: ParseTree, target_path: str):
         self.visitDocument(tree)
         try:
-            file = open(target_path, "w")
+            file = open(target_path, "w", encoding="UTF-8")
             file.write(''.join(self.buffer))  # junta la lista de strings en un solo string final.
             file.close()
         except IOError:
@@ -75,10 +75,6 @@ class HTMLWriter(RSSParserVisitor):
                 return "<p>"
             case "C_DESC":
                 return "</p>"
-            case "O_LINK" | "O_URL":
-                return "<a>"
-            case "C_LINK" | "C_URL":
-                return "</a>"
             case "O_COPYR":
                 return "<small title=\"copyright\">"
             case "O_CATEG":
@@ -142,3 +138,8 @@ class HTMLWriter(RSSParserVisitor):
             return "88"  # el default es 88 según la especificación.
         else:
             return ctx.INT().getText()
+
+    # caso personalizado para cuando se visita a un nodo no terminal link.
+    # Esto se debe a que en HTML se necesita un atributo 'href' con el hipervínculo.
+    def visitLink(self, ctx: RSSParser.LinkContext):
+        self.append_with_offset(f"<a href=\"{ctx.URL()}\">{ctx.URL()}</a>")
