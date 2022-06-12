@@ -22,10 +22,10 @@ def parse_input(input_stream):
         tree = parser.document()  # Análisis sintáctico, obtenemos el parse tree.
     except Exception as e:
         print(e, file=sys.stderr)  # Hubo error al parsear (normalmente por un mal HEIGHT o WIDTH).
+        print("======== El documento NO cumple con el formato RSS. ========")
         sys.exit(1)
 
     if parser.getNumberOfSyntaxErrors() > 0:
-        print("Total de errores de sintaxis detectados: " + str(parser.getNumberOfSyntaxErrors()))
         print("======== El documento NO cumple con el formato RSS. ========")
         if "--debug" not in sys.argv:
             sys.exit(0)
