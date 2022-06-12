@@ -22,7 +22,8 @@ TXT         :   ~[<]+ ;
 
 // fragmentos que componen el token URL. No son tokens en sí mismos, solo son partes del token URL.
 // Para el parser, solo existe el token URL.
-fragment    URL_STR     :   INT | [a-zA-Z~0-9] [a-zA-Z0-9.+-]* ; // string dentro de una url
+fragment    HEX         :   '%' [a-fA-F0-9] [a-fA-F0-9] ;  // Ej: cuando un espacio ' ' se vuelve un '%20'
+fragment    URL_STR     :   INT | ([a-zA-Z~0-9] | HEX) ([a-zA-Z0-9.+_-] | HEX)* ; // string dentro de una url
 fragment    PROTOCOL    :   URL_STR '://' ;
 fragment    LOGIN       :   URL_STR (':' URL_STR)? '@' ;
 fragment    DOM         :   URL_STR ('.' URL_STR)* ;

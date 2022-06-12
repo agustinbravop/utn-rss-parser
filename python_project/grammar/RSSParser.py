@@ -1,4 +1,4 @@
-# Generated from C:/Users/anbra/Desktop/UTN/2doNivel/Sintaxis y Sem·ntica de los Lenguajes/RSSParser/RSSParser/python_project/grammar\RSSParser.g4 by ANTLR 4.10.1
+# Generated from C:/Users/anbra/Desktop/UTN/2doNivel/Sintaxis y Sem√°ntica de los Lenguajes/RSSParser/RSSParser/python_project/grammar\RSSParser.g4 by ANTLR 4.10.1
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
