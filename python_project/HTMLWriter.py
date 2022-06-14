@@ -118,10 +118,16 @@ class HTMLWriter(RSSParserVisitor):
     # caso personalizado para cuando se visita a un nodo no terminal img.
     # En HTML una img no tiene contenido, asi que lo que en RSS eran etiquetas hijas, en HTML son atributos.
     def visitImg(self, ctx: RSSParser.ImgContext):
-        self.append_with_offset("<img src=\"" + ctx.url().URL().getText() + "\" ")
-        self.buffer.append("alt=\"" + ctx.title().txt().getText() + "\" ")
-        self.buffer.append("height=\"" + self.visitHeight(ctx.height()) + "\" ")
-        self.buffer.append("width=\"" + self.visitWidth(ctx.width()) + "\" />")
+        self.append_with_offset(f"<a href=\"{ctx.link().URL().getText()}\">")
+
+        self.offset += 1
+        self.append_with_offset(f"<img src=\"{ctx.url().URL().getText()}\" ")
+        self.buffer.append(f"alt=\"{ctx.title().txt().getText()}\" ")
+        self.buffer.append(f"height=\"{self.visitHeight(ctx.height())}\" ")
+        self.buffer.append(f"width=\"{self.visitWidth(ctx.width())}\" />")
+        self.offset -= 1
+
+        self.append_with_offset("</a>")
 
     # caso personalizado para cuando se visita a un nodo no terminal height.
     # Solo es llamado desde visitImg().
