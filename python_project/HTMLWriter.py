@@ -47,6 +47,7 @@ class HTMLWriter(RSSParserVisitor):
                 or isinstance(node, RSSParser.TxtContext)
                 or isinstance(node, RSSParser.RssContext)
                 or isinstance(node, RSSParser.In_itemContext)):
+            # no incrementamos el offset para evitar un nivel más de identación en el HTML
             self.visit_child_nodes(node)
         else:
             self.append_with_offset("")
@@ -57,8 +58,10 @@ class HTMLWriter(RSSParserVisitor):
     # visitTerminal se ejecuta cada vez que se visita a un nodo terminal del parse tree.
     # un nodo terminal es siempre un token. Cada token devuelve su propia nueva representación en HTML.
     def visitTerminal(self, node: TerminalNode):
-        token_type = self.symbolic_names[node.symbol.type]  # según el tipo, se obtiene su nombre simbólico.
-        match token_type:  # según su nombre simbólico, retornar su correspondiente traducción a HTML.
+        # según el tipo de nodo, se obtiene su nombre simbólico.
+        token_type = self.symbolic_names[node.symbol.type]
+        match token_type:
+            # según su nombre simbólico, retornar su correspondiente traducción a HTML.
             case "XML_ENCODING" | "INT" | "URL" | "TXT":
                 return node.getText()
             case "O_RSS":
@@ -115,9 +118,11 @@ class HTMLWriter(RSSParserVisitor):
         else:
             self.append_with_offset("<h3>" + ctx.txt().getText() + "</h3>")
 
-    # caso personalizado para cuando se visita a un nodo no terminal img.
+    # Caso personalizado para cuando se visita a un nodo no terminal img.
     # En HTML una img no tiene contenido, asi que lo que en RSS eran etiquetas hijas, en HTML son atributos.
     def visitImg(self, ctx: RSSParser.ImgContext):
+        # Envolvemos a la <img> en un <a>, para que diriga a la url de <link>.
+        # Según la especificación, la url de <link> es la url del sitio web fuente.
         self.append_with_offset(f"<a href=\"{ctx.link().URL().getText()}\">")
 
         self.offset += 1
@@ -129,23 +134,23 @@ class HTMLWriter(RSSParserVisitor):
 
         self.append_with_offset("</a>")
 
-    # caso personalizado para cuando se visita a un nodo no terminal height.
+    # Caso personalizado para cuando se visita a un nodo no terminal height.
     # Solo es llamado desde visitImg().
     def visitHeight(self, ctx: RSSParser.HeightContext):
         if ctx is None:
-            return "31"  # el default es 31 según la especificación.
+            return "31"  # El default es 31 según la especificación.
         else:
             return ctx.INT().getText()
 
-    # caso personalizado para cuando se visita a un nodo no terminal width.
+    # Caso personalizado para cuando se visita a un nodo no terminal width.
     # Solo es llamado desde visitWidth().
     def visitWidth(self, ctx: RSSParser.WidthContext):
         if ctx is None:
-            return "88"  # el default es 88 según la especificación.
+            return "88"  # El default es 88 según la especificación.
         else:
             return ctx.INT().getText()
 
-    # caso personalizado para cuando se visita a un nodo no terminal link.
+    # Caso personalizado para cuando se visita a un nodo no terminal link.
     # Esto se debe a que en HTML se necesita un atributo 'href' con el hipervínculo.
     def visitLink(self, ctx: RSSParser.LinkContext):
         self.append_with_offset(f"<a href=\"{ctx.URL()}\">{ctx.URL()}</a>")

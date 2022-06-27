@@ -9,7 +9,7 @@ lexer grammar RSSLexer;
     Ej: [a-zA-Z]+ significa que puede venir cualquier palabra.
     Es una forma exelente de resumir: (a U ... U z U A U ... U Z)(a U ... U z U A U ... U Z)*
 */
-COMMENT     :   '<!--' .*? '-->'    -> channel(HIDDEN); // 'channel(HIDDEN)' hace que el parser ignore el token
+COMMENT     :   '<!--' .*? '-->'    -> skip ; // 'channel(HIDDEN)' hace que el parser ignore el token
 WS          :   [ \t\r\n]+      -> skip ; // 'skip' hace que el lexer ignore  el token, lo descarta
 
 /*
