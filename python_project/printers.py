@@ -5,8 +5,9 @@ from antlr4.tree.Trees import *
 
 
 def print_tokens(tokens: List[Token], symbolic_names: List[str]):
-    i: int = 0
-    for token in tokens[:-1]:  # se itera sobre todos los tokens excepto el último.
+    i: int = 1
+    # Se itera sobre todos los tokens excepto el último.
+    for token in tokens[:-1]:
         print(f'{i}. {symbolic_names[token.type]}: \'{token.text}\'')
         i = i + 1
 
