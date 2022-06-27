@@ -88,6 +88,7 @@ class HTMLWriter(RSSParserVisitor):
                 return None
 
     # caso personalizado para cuando se visita a un nodo no terminal document.
+    # Se declara el HTML, y luego se visita la etiqueta XML y el RSS.
     def visitDocument(self, ctx: RSSParser.DocumentContext):
         self.buffer.append("<!DOCTYPE html>\n<html lang=\"en\">\n")
         self.visitXml(ctx.xml())
@@ -98,8 +99,8 @@ class HTMLWriter(RSSParserVisitor):
     # En HTML esto serían etiquetas <meta> que van en el head.
     def visitXml(self, ctx: RSSParser.XmlContext):
         self.buffer.append("<head>")
-        encoding_node = ctx.xml_encoding()
 
+        encoding_node = ctx.xml_encoding()
         if encoding_node is not None:
             self.append_with_offset("<meta charset=" + encoding_node.XML_ENCODING().getText() + ">")
 
@@ -123,7 +124,7 @@ class HTMLWriter(RSSParserVisitor):
     def visitImg(self, ctx: RSSParser.ImgContext):
         # Envolvemos a la <img> en un <a>, para que diriga a la url de <link>.
         # Según la especificación, la url de <link> es la url del sitio web fuente.
-        self.append_with_offset(f"<a href=\"{ctx.link().URL().getText()}\">")
+        self.visitLink(ctx.link())
 
         self.offset += 1
         self.append_with_offset(f"<img src=\"{ctx.url().URL().getText()}\" ")
