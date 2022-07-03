@@ -124,7 +124,7 @@ class HTMLWriter(RSSParserVisitor):
     def visitImg(self, ctx: RSSParser.ImgContext):
         # Envolvemos a la <img> en un <a>, para que diriga a la url de <link>.
         # Según la especificación, la url de <link> es la url del sitio web fuente.
-        self.visitLink(ctx.link())
+        self.append_with_offset(f"<a href=\"{ctx.link().URL().getText()}\">")
 
         self.offset += 1
         self.append_with_offset(f"<img src=\"{ctx.url().URL().getText()}\" ")
@@ -152,6 +152,6 @@ class HTMLWriter(RSSParserVisitor):
             return ctx.INT().getText()
 
     # Caso personalizado para cuando se visita a un nodo no terminal link.
-    # Esto se debe a que en HTML se necesita un atributo 'href' con el hipervínculo.
+    # Esto se debe a que en HTML se necesita un atributo 'href' con el hipervínculo.3
     def visitLink(self, ctx: RSSParser.LinkContext):
         self.append_with_offset(f"<a href=\"{ctx.URL()}\">{ctx.URL()}</a>")
